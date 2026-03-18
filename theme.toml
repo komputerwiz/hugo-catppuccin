@@ -1,0 +1,20 @@
+name = "Catppuccin"
+license = "MIT"
+licenselink = "https://mit-license.org/"
+description = "A simple theme based on the Catppuccin color palette."
+
+homepage = "https://github.com/komputerwiz/hugo-catppuccin"
+
+demosite = "https://w5bcs.radio/minutes/"
+
+tags = ["catppuccin", "light", "dark"]
+featutres = []
+
+[author]
+name = "Matthew Barry"
+homepage = "https://komputerwiz.net/"
+
+[original]
+name = "Catppuccin"
+homepage = "https://catppuccin.com/"
+repo = "https://github.com/catppuccin/catppuccin"
