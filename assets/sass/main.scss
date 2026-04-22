@@ -139,6 +139,25 @@ $palette: (
 	--bs-body-color: #{map.get($colors, 'text')};
 	--bs-secondary-color: #{map.get($colors, 'overlay1')};
 
+
+		// new component UI colors
+		--pf-text: #{map.get($colors, 'text')} !important;
+		--pf-text-secondary: #{map.get($colors, 'subtext0')} !important;
+		--pf-text-muted: #{map.get($colors, 'overlay1')} !important;
+		--pf-background: #{map.get($colors, 'base')} !important;
+		--pf-border: #{map.get($colors, 'overlay1')} !important;
+		--pf-border-focus: #{map.get($colors, 'lavender')} !important;
+		--pf-skeleton: #{map.get($colors, 'crust')} !important;
+		--pf-skeleton-shine: #{map.get($colors, 'surface0')} !important;
+		--pf-hover: #{map.get($colors, 'surface1')} !important;
+		--pf-mark: #{map.get($colors, 'yellow')} !important;
+		// --pf-scroll-shadow: #{map.get($colors, '')} !important;
+		// --pf-error-bg: #{map.get($colors, '')} !important;
+		// --pf-error-border: #{map.get($colors, '')} !important;
+		// --pf-error-text: #{map.get($colors, '')} !important;
+		// --pf-error-text-secondary: #{map.get($colors, '')} !important;
+		--pf-outline-focus: #{map.get($colors, 'lavender')} !important;
+
 	body {
 		@media screen {
 			background: map.get($colors, 'base');
@@ -264,15 +283,6 @@ $palette: (
 			}
 		}
 	}
-
-	.search {
-		#search {
-			--pagefind-ui-text: #{map.get($colors, 'text')};
-			--pagefind-ui-background: #{map.get($colors, 'base')};
-			--pagefind-ui-border: #{map.get($colors, 'overlay1')};
-			--pagefind-ui-tag: #{map.get($colors, 'overlay1')};
-		}
-	}
 }
 
 // fix for Bootstrap container width when printing
@@ -286,6 +296,11 @@ html {
 	@include catppuccin-rebase(map.get($palette, 'latte'));
 
 	--article-font: monospace;
+
+	--pf-font: var(--article-font) !important;
+	--pf-border-radius: 8px !important;
+	--pf-modal-max-width: 1200px !important;
+	--pf-modal-max-height: 90vh !important;
 
 	&[data-theme-variant=frappe] {
 		@include catppuccin-rebase(map.get($palette, 'frappe'));
@@ -494,18 +509,6 @@ footer {
 		.summary {
 			padding: 0.5rem;
 		}
-	}
-}
-
-.search {
-	#search {
-		--pagefind-ui-scale: 1;
-		--pagefind-ui-primary: var(--bs-primary);
-		--pagefind-ui-border-width: 2px;
-		--pagefind-ui-border-radius: 8px;
-		--pagefind-ui-image-border-radius: 8px;
-		--pagefind-ui-image-box-ratio: 3 / 2;
-		--pagefind-ui-font: var(--article-font);
 	}
 }
 

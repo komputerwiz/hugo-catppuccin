@@ -3,11 +3,12 @@
 {{ define "bodyclass" }}search{{ end }}
 
 {{ define "stylesheets" }}
-<link href="{{ relURL "pagefind/pagefind-ui.css" }}" rel="stylesheet">
+	<!-- <link rel="stylesheet" href="{{ relURL "pagefind/pagefind-component-ui.css" }}"> -->
 {{ end }}
 
 {{ define "javascripts" }}
-	<script src="{{ relURL "pagefind/pagefind-ui.js" }}"></script>
+	<!-- <script src="{{ relURL "pagefind/pagefind-component-ui.js" }}"></script> -->
+	<!-- This was the old (non-component) API for populating the search field
 	<script>
 		window.addEventListener('DOMContentLoaded', (event) => {
 			const search = new PagefindUI({
@@ -26,12 +27,32 @@
 			}
 		});
 	</script>
+	-->
 {{ end }}
 
 {{ define "body" }}
 	{{ partial "header.html" . }}
 	<article class="container py-3">
 		{{ .Content }}
-		<div id="search"></div>
 	</article>
+	<div class="container py-3">
+
+		<!-- <pagefind-config faceted></pagefind-config> -->
+
+		<div class="row">
+			<div class="col-xs-12 my-3">
+				<pagefind-input instance="search-page"></pagefind-input>
+			</div>
+
+			<div class="col-md-4 col-lg-3 my-3">
+				<pagefind-filter-pane instance="search-page"></pagefind-filter-pane>
+			</div>
+
+			<div class="col-md-8 col-lg-9 my-3">
+				<pagefind-summary instance="search-page"></pagefind-summary>
+				<pagefind-results instance="search-page"></pagefind-results>
+			</div>
+		</div>
+
+	</div>
 {{ end }}
